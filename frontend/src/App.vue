@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
 </script>
 
+<!--
 <template>
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -13,6 +14,14 @@ import HelloWorld from './components/HelloWorld.vue'
   </div>
   <HelloWorld msg="Vite + Vue" />
 </template>
+-->
+
+<template>
+  <div id="app">
+    <router-view />
+  </div>
+</template>
+
 
 <style scoped>
 .logo {
