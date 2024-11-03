@@ -70,3 +70,16 @@ p {
     background-clip: text;
     color: transparent;
 }
+
+#avatar-container {
+    height: 500px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+#avatar-loading {
+    font-size: 3em;
+}
