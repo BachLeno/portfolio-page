@@ -1,10 +1,12 @@
 import { renderHome } from './components/home.js';
 import { renderAbout } from './components/about.js';
+import { renderAPIs } from './components/apis.js';
 import { renderContact } from './components/contact.js';
 
 const routes = {
     home: renderHome,
     about: renderAbout,
+    apis: renderAPIs,
     contact: renderContact
   };
 

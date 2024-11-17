@@ -60,9 +60,19 @@ p {
   
 .hero {
     padding-top: 60px;
+    text-align: center;
     display: flex;
-    flex-direction: row;
-    text-align: left;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+  
+.hero-subtitle {
+    font-size: 1.5em;
+    color: #b0b0b0;
+    font-weight: 300;
+    margin-bottom: 20px;
 }
   
 .gradient-text {
@@ -155,3 +165,47 @@ p {
     background-color: #4c2c84;
     transform: translateY(0);
 }
+
+/* Joke Container */
+.joke-container {
+    max-width: 100%;
+    background: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    text-align: center;
+}
+  
+.joke-container p {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #eaeaea;
+    line-height: 1.5;
+}
+  
+.joke-button {
+    background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+  
+.joke-button:hover {
+    background: linear-gradient(135deg, #8e24aa, #ab47bc);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.joke-button:active {
+    background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+    transform: translateY(0);
+}
+
+
