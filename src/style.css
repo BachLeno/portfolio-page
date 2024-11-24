@@ -208,4 +208,47 @@ p {
     transform: translateY(0);
 }
 
+/* Map Section */
+.map-container {
+    margin-top: 100px;
+    background: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  #map {
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .map-button {
+    background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    margin-top: 15px;
+    font-size: 1.2em;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  .map-button:hover {
+    background: linear-gradient(135deg, #8e24aa, #ab47bc);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .map-button:active {
+    background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+    transform: translateY(0);
+  }
 

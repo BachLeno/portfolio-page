@@ -9,6 +9,12 @@ export async function renderAPIs() {
       </div>
       <button id="fetch-joke-button" class="joke-button">Get a Joke</button>
     </section>
+    </section>
+    <section id="map-section" class="map-container">
+      <h1><span class='gradient-text'>Find My Location</span></h1>
+      <button id="locate-button" class="map-button">Show My Location on Map</button>
+      <div id="map"></div>
+    </section>
   `;
 
   const fetchJokeButton = document.getElementById('fetch-joke-button');
@@ -30,6 +36,35 @@ export async function renderAPIs() {
       console.error('Error fetching joke:', error);
       jokeText.textContent = 'Error fetching joke. Please try again later.';
     }
+  });
+
+  // Initialize Leaflet map
+  const map = L.map('map').setView([46.94809, 7.44744], 13); // Default center on Bern, Switzerland
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  // Add location functionality
+  const locateButton = document.getElementById('locate-button');
+  locateButton.addEventListener('click', () => {
+    if (!navigator.geolocation) {
+      alert('Geolocation is not supported by your browser.');
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        map.setView([latitude, longitude], 13); // Center the map on user's location
+        L.marker([latitude, longitude])
+          .addTo(map)
+          .bindPopup('You are here!')
+          .openPopup();
+      },
+      () => {
+        alert('Unable to retrieve your location.');
+      }
+    );
   });
 }
   
