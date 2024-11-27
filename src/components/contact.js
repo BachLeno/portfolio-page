@@ -1,8 +1,8 @@
 // Import the configuration
-import CONFIG from '../config.js';
+import MY_SECRET from '../secrets.js';
 
 // Initialize EmailJS
-emailjs.init(CONFIG.USER_ID);
+emailjs.init(MY_SECRET.USER_ID);
 
 // Function to validate the form fields
 function validateForm(contactForm) {
@@ -37,7 +37,7 @@ function sendEmail(event) {
     return; // Stop if validation fails
   }
 
-  emailjs.sendForm(CONFIG.SERVICE_ID, CONFIG.TEMPLATE_ID, contactForm)
+  emailjs.sendForm(MY_SECRET.SERVICE_ID, MY_SECRET.TEMPLATE_ID, contactForm)
     .then((result) => {
       console.log('Email sent successfully:', result.text);
       alert("Message Sent Successfully!");

@@ -1,0 +1,46 @@
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Inject Secrets
+        run: |
+          echo "const MY_SECRET = {" > src/secrets.js
+          echo "  SERVICE_ID: '${{ secrets.SERVICE_ID }}'," >> src/secrets.js
+          echo "  TEMPLATE_ID: '${{ secrets.TEMPLATE_ID }}'," >> src/secrets.js
+          echo "  USER_ID: '${{ secrets.USER_ID }}'" >> src/secrets.js
+          echo "};" >> src/secrets.js
+          echo "export default MY_SECRET;" >> src/secrets.js
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,2 +1,2 @@
-# Ignore the config file
-src/config.js
+# Ignore the secrets file
+src/secrets.js
