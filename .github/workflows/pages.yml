@@ -25,7 +25,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Inject Secrets
-        run: echo "const MY_SECRET = '${{ secrets.SERVICE_ID }}', '${{ secrets.TEMPLATE_ID }}', '${{ secrets.USER_ID }}';" > secret.js
+        run: echo "const SERVICE_ID = '${{ secrets.SERVICE_ID }}'; const TEMPLATE_ID = '${{ secrets.TEMPLATE_ID }}'; const USER_ID = '${{ secrets.USER_ID }}';" > secret.js
+
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
