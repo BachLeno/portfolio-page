@@ -25,13 +25,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Inject Secrets
-        run: |
-          echo "const MY_SECRET = {" > src/secrets.js
-          echo "  SERVICE_ID: '${{ secrets.SERVICE_ID }}'," >> src/secrets.js
-          echo "  TEMPLATE_ID: '${{ secrets.TEMPLATE_ID }}'," >> src/secrets.js
-          echo "  USER_ID: '${{ secrets.USER_ID }}'" >> src/secrets.js
-          echo "};" >> src/secrets.js
-          echo "export default MY_SECRET;" >> src/secrets.js
+        run: echo "const MY_SECRET = '${{ secrets.SERVICE_ID }}', '${{ secrets.TEMPLATE_ID }}', '${{ secrets.USER_ID }}';" > secret.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
