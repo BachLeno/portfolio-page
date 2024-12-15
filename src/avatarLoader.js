@@ -4,10 +4,15 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 export default function loadAvatar() {
   const loader = new GLTFLoader();
+
+  // Determine the correct path dynamically
+  const basePath = window.location.pathname.includes('portfolio-page')
+    ? '/portfolio-page/public/avatar.glb'
+    : '/public/avatar.glb';
   
   // Load the GLB model
   loader.load(
-    '/public/avatar.glb',  // Path to the GLB file
+    basePath,  // Dynamically determined path to the GLB file
     (gltf) => {
       setupScene(gltf);
       document.getElementById('avatar-loading').style.display = 'none';
@@ -29,11 +34,11 @@ function setupScene(gltf) {
     alpha: true 
   });
   renderer.outputColorSpace = THREE.SRGBColorSpace;
-  
+
   const container = document.getElementById('avatar-container');
   renderer.setSize(container.clientWidth, container.clientHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
-  
+
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
