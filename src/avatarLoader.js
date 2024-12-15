@@ -7,7 +7,7 @@ export default function loadAvatar() {
   
   // Load the GLB model
   loader.load(
-    '/portfolio-page/avatar.glb',  // Path to the GLB file
+    '/public/avatar.glb',  // Path to the GLB file
     (gltf) => {
       setupScene(gltf);
       document.getElementById('avatar-loading').style.display = 'none';

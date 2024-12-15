@@ -1,2 +1,2 @@
 # Ignore the secrets file
-src/secrets.js
+src/secret.js
