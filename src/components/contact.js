@@ -2,7 +2,10 @@
 //import MY_SECRET from '../../secret.js';
 
 // Initialize EmailJS
-emailjs.init(USER_ID);
+emailjs.init(
+  USER_ID
+  //MY_SECRET.USER_ID
+);
 
 // Function to validate the form fields
 function validateForm(contactForm) {
@@ -37,7 +40,13 @@ function sendEmail(event) {
     return; // Stop if validation fails
   }
 
-  emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, contactForm)
+  emailjs.sendForm(
+    SERVICE_ID, 
+    TEMPLATE_ID, 
+    //MY_SECRET.SERVICE_ID,
+    //MY_SECRET.TEMPLATE_ID,
+    contactForm
+  )
     .then((result) => {
       console.log('Email sent successfully:', result.text);
       alert("Message Sent Successfully!");
