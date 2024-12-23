@@ -26,14 +26,19 @@
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="#home" data-section="home">Home</a></li>
-        <li><a href="#about" data-section="about">About Me</a></li>
-        <li><a href="#apis" data-section="apis">APIs</a></li>
-        <li><a href="#contact" data-section="contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="nav-container">
+      <button id="hamburger-menu" class="hamburger-menu">
+        ☰
+      </button>
+      <nav id="nav-links" class="nav-links">
+        <ul>
+          <li><a href="#home" data-section="home">Home</a></li>
+          <li><a href="#about" data-section="about">About Me</a></li>
+          <li><a href="#apis" data-section="apis">APIs</a></li>
+          <li><a href="#contact" data-section="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
   <div class="content" id="app"></div>
 </body>

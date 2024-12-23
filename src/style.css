@@ -7,13 +7,29 @@ body {
     min-height: 100vh;
 }
   
-/* Header & Navigation styles */
-header {
-    padding: 10px 0px;
-    text-align: right;
+/* Navigation & Hamburger Menu styles */
+.nav-container {
+    display: flex; /* Add flexbox for alignment */
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Vertically center the items */
+    padding: 10px 20px; /* Adjust padding as needed */
 }
   
-nav ul {
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+    margin-left: auto;
+}
+  
+.nav-links {
+    display: flex;
+}
+  
+.nav-links ul {
     list-style: none;
     padding: 0;
 }
@@ -23,12 +39,49 @@ nav ul li {
     margin: 0 30px;
 }
   
-nav ul li a {
+.nav-links ul li a {
     color: #919090;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 100;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+  
+.nav-links ul li a:hover {
+    color: #fff;
+}
+  
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+  
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #1f1e28;
+        border-radius: 8px;
+        width: 200px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    }
+  
+    .nav-links.active {
+        display: flex;
+    }
+  
+    .nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+  
+    .nav-links ul li {
+        text-align: center;
+    }
 }
 
 
