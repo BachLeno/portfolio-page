@@ -30,3 +30,11 @@ const navLinks = document.getElementById('nav-links');
 hamburgerMenu.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
+
+const navLinksList = document.querySelectorAll('#nav-links a');
+
+navLinksList.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
