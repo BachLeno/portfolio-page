@@ -1,5 +1,11 @@
 # portfolio-page
 
+## Zugriff auf die Webseite
+
+Da ich GitHub Actions für den Build und das Deployment verwende, findet Ihr hier den Link zur öffentlich zugänglichen Webseite, die über GitHub Pages bereitgestellt wird:
+
+https://bachleno.github.io/portfolio-page/
+
 ## Hinweis zur verwendeten 3D-Figur
 
 Die in diesem Projekt verwendete 3D-Figur stellt **nicht mich persönlich** dar. Hier ist der Grund dafür:
