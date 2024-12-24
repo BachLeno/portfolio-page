@@ -388,6 +388,7 @@ p {
     /* Map Section */
     .map-container {
         padding: 10px;
+        margin-top: 45px;
     }
   
     .map-button {
@@ -418,9 +419,10 @@ p {
 }
   
 #contact h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    font-weight: 600;
+    font-size: 4em;
+    padding-bottom: 20px;
+    margin: 0;
+    font-weight: 500;
 }
 
 #contact-form {
@@ -457,7 +459,7 @@ p {
 }
 
 #contact-form button {
-    background-color: #6a1b9a;
+    background: linear-gradient(135deg, #6a1b9a, #8e24aa);
     border: none;
     border-radius: 5px;
     padding: 15px;
@@ -468,11 +470,12 @@ p {
 }
 
 #contact-form button:hover {
-    background-color: #5e35b1;
+    background: linear-gradient(135deg, #8e24aa, #ab47bc);
     transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-
+  
 #contact-form button:active {
-    background-color: #4c2c84;
+    background: linear-gradient(135deg, #6a1b9a, #8e24aa);
     transform: translateY(0);
 }
