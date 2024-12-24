@@ -251,24 +251,44 @@ p {
   
 /* Responsive Design */
 @media screen and (max-width: 768px) {
+    #about {
+        padding: 20px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    .timeline-container {
+        gap: 20px;
+        padding: 10px;
+    }
+
     .timeline-row {
-      grid-template-columns: 1fr; /* Stack items vertically on small screens */
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
-  
+
     .timeline-item {
-      padding: 10px;
+        padding: 10px;
+        font-size: 0.9em;
     }
-  
+
     .timeline-date {
-      font-size: 1em;
+        font-size: 1em;
     }
-  
+
     .timeline-content h3 {
-      font-size: 1.2em;
+        font-size: 1.2em;
     }
-  
+
     .timeline-content p {
-      font-size: 1em;
+        font-size: 1em;
+    }
+
+    .span.gradient-text {
+        font-size: 2em;
     }
 }
   
