@@ -10,7 +10,7 @@ export async function renderAPIs() {
       <button id="fetch-joke-button" class="joke-button">Get a Joke</button>
     </section>
     </section>
-    <section id="map-section" class="map-container">
+    <section id="map-section" class="map-container" class="hero">
       <h1><span class='gradient-text'>Find My Location</span></h1>
       <button id="locate-button" class="map-button">Show My Location on Map</button>
       <div id="map"></div>
